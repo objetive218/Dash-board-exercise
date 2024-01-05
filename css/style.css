@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
 }
 li{
     list-style: none;
 }
 img{
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
     object-fit:contain;
 }
 #main {
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template: 1fr 3fr 3fr / 2fr 2fr 2fr 2fr;
+    grid-template: 1fr 3fr 3fr / 1fr 2fr 2fr 1.5fr;
 }
 /*Dashboard */
 #main #dash{
@@ -25,8 +28,9 @@ img{
     grid-row: 1/4;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr repeat(9, 1fr); 
-    background-color: aqua;
-    max-height: 100vh;
+    background-color: #c2fef7;
+    box-shadow: #f0fffd 1px 1px 1px 5px;
+    border-radius: 0px 15px 15px 0px;
 }
 #main #dash ul{
     display: grid;
@@ -56,12 +60,21 @@ img{
 #main #head{
     grid-column: 2/5;
     grid-row: 1/2;
+    background-color: #f0fffd;
+    padding-top: 15px;
+    box-shadow: #c2fef7 10px 4px 8px 1px;
 }
 #main #head #bar{
     display: grid; 
-    grid-template: 2fr / 1fr 4fr 1fr 1fr 2fr;
+    grid-template: 2fr / 0.5fr 4fr 1fr 1fr 2fr;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
+}
+#main #head #bar > img {
+    justify-self: end;
+}
+#main #head #bar > input{
+    border-radius: 15px;
 }
  /*Header user_act*/
 #main #head #user_act{
@@ -71,7 +84,7 @@ img{
 }
 #main #head #user_act > div{
     display: grid;
-    grid-template: 1fr 2fr / 1fr 1fr;
+    grid-template: 1fr 1fr / 0.5fr 2fr;
     align-items: center;
     align-self: center;
     justify-content: center;
@@ -79,28 +92,105 @@ img{
 #main #head #user_act > div :first-child{
     grid-column: 1/2;
     grid-row: 1/3;
+    justify-self: center;
+    width: 80px;
+    height: 80px;
 }
+#main #head #user_act > button{
+    border-radius: 15px;
+    width: 8vw;
+    height: 4vh;
+    background-color: #d1fef9;
+    font-size: 16px;
 
+}
 /*projects*/
 #main #projects{
     display: grid;
     grid-row: 2/4;
     grid-column: 2/4;
-    background-color: azure;
+    grid-template: 0.3fr repeat(3, 1fr) / 1fr 1fr;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    border: solid #e1fffb 5px;
+    box-shadow: #c2fef7 5px 5px 5px 1px;
+    gap: 3px;
 }
+#main #projects > h3{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    align-self: center;
+}
+#main #projects > div{
+    padding: 10px;
+    border: solid #e1fffb 3px;
+    border-radius: 15px;
+}
+#main #projects > div > div {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 5px;
+    
+}
+
 
 /*announcements*/
 #main #announ{
     display: grid;
     grid-row: 2/3;
     grid-column: 4/5;
+    grid-template: 0.66fr repeat(3, 1fr) / 1fr;
     background-color: azure;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    border: solid #e1fffb 1px;
+    box-shadow: #c2fef7 5px 8px 5px 1px;
 }
-
+#main #announ > h3 {
+    align-self: center;
+}
+#main #announ > div {
+   align-self: center;
+}
 /*trending*/
 #main #trending{
     display: grid;
     grid-row: 3/4;
     grid-column: 4/5;
-    background-color: azure;
+    background-color: lightgreen;
+    grid-template: 0.5fr repeat(3, 1fr) / 1fr;
+    grid-row: auto;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #ffffff;
+    border: solid #e1fffb 3px;
+    box-shadow: #c2fef7 5px 5px 5px 1px;
+}
+#main #trending > h3 {
+    grid-row: 1/2;
+    align-self: center;
+}
+#main #trending > div {
+    grid-template: 0.3fr 0.3fr / 0.2fr 1fr;
+    display: grid;
+    gap: 5px;
+}
+#main #trending > div > img {
+    grid-column: 1/1;
+    grid-row: 1/3;
+    justify-self: flex-end;
+    align-self: center;
+}
+#main #trending > div > h6{
+    align-self: flex-end;
+}
+#main #trending > div > img {
+    width: 40px;
+    height: 40px;
 }
